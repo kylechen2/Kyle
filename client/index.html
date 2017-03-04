@@ -35,6 +35,8 @@
 
 </body>
 <body> <h2>World Wide Pong Game</h2>
+<p>Directions: Use A and Q to move the left paddle. Use The up and down arrow Keys to move the right paddle. Try to score by making the ball go into their goal but make sure to defend your own goal!</p>
+<p>Warning: If you press and hold the keys to move the Paddle might go off the screen</p>
 <canvas id="gamespace"width="640"height="440"style="background:lightgreen"></canvas>
 <script>
   var START_GAMESPACE_LINES = 5
@@ -123,7 +125,13 @@ document.onkeyup = function(e) {
     p=0;
     q=0;
     if (nearY<0)
-      nearY=100;
+      nearY=0;
+    if (nearY>350)
+      nearY=350;
+    if (farY<0)
+      farY=0;
+    if (farY>350)
+      farY=350;
 }
 
 /* Cheat sheet
